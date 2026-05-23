@@ -42,12 +42,12 @@ cenários negativos (fluxos de exceção):
 Cobertura de testes da API de Usuário:
 
 1. Positivo (200): *Criar usuário*
-2. 
+2. Negativo (400) : * Cadastro de usuário com e-mail existente*
 
 Cobertura de testes da API de Login:
 
 1. Positivo (200): *Efetuar Login*
-2. Negativo ( ) : * Efetuar Login com senha inválida
+2. Negativo (401) : * Efetuar Login com senha inválida
 
 
 Cobertura de testes da API de Produtos:
