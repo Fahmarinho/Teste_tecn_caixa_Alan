@@ -1,10 +1,16 @@
 # SPREAD: Desafio Técnico de Testes de Software
 
-O ServeRest é uma API REST gratuita que simula uma loja virtual com intuito de servir de material de estudos de testes de API. 
-Toda API que estiver com um ĩcone de um cadeado requer authentificação via Token, o utilizado nesse teste é o *Bearer token*, por padrão a duração da autorização é 10 minutos, então quando o token de acesso expirar, sua aplicação deverá gerar um novo Token de autorização
+O ServeRest é uma API REST gratuita que simula uma loja virtual que aborta os seguintes fluxos. 
+- Usuários: `<Criação/ Listar/ Atualização / Exclusão>`
+- Usuários: `<Criação Login >`
+- Produtos :`<Criação/ Listar/ Atualização / Exclusão>`
+- Carrinho :`<Criação/ Listar/Exclusão/ Cancelar compra>`
 
 
-### Exemplo de APIs que possuem ícone de cadeado e que tem como *Pré- Condição* a utilizaçao do Tokem:
+Toda API que estiver com um ĩcone de um cadeado requer authentificação via Token, nesse teste técnico é o utilizado o *Bearer token*, por padrão de configuração da *Serverrest* a duração da autorização é de 10 minutos, então quando o token de acesso expirar, sua aplicação deverá gerar um novo Token de autorização
+
+
+###  APIs que tem como  *Pré- Condição* a geração do Tokem:
 - API de Usuários: `<Cadastro/ Atualização / Exclusão>`
 - API de Produtos :`<Cadastro/ Atualização / Exclusão>`
 - API de Carrinho :`<Cadastro/ Atualização / Exclusão>`
