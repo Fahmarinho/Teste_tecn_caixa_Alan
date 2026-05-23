@@ -47,21 +47,21 @@ cenários negativos (fluxos de exceção):
 
 **CB- Cobertura de testes da API de Login**
 
-1. Positivo (200): *Realizar Login com credenciais válidas   (Status code 200)*
-2. Negativo (401) : * Realizar Login com senha incorreta   (Status code 401)*
+1. Positivo (200): *Realizar Login com credenciais válidas*
+2. Negativo (401) : * Realizar Login com senha incorreta*
    
 **CB - Cobertura de testes da API de Produtos:**
-   
-1.Negativo (401) *Tentar cadastrar produto sem token (Status code 401 )*
-2.Positivo (201): *Cadastro de produto com sucesso*
-3.Fluxo alternativo (400 ): * Cadastrar produto com nome já existente*
+
+1. Negativo (201) : *Tentar cadastrar produto sem token*
+2. Positivo (201) : *Cadastro de produto com sucesso*
+3. Fluxo Alternativo(400): *Cadastrar produto com nome já existente*
 
 **CB -Cobertura de testes da API de Carrinho:**
 
 1. Positivo (201) : *Criar um carrinho contendo produtos válidos*
 2. Negativo (400 ) : *Adicionar quantidade de produto acima do estoque disponível*
 3. Negativo (400) :Tentar cadastrar mais de um carrinho para um único  usuário*
-4. Fluxo FA (200) : Cancelar compra devolvendo produtos ao estoque 
+4. Fluxo Alternativo (200) : Cancelar compra devolvendo produtos ao estoque 
    
 
 🚀 🤝  😄 **Muito agradecida por Lê até aqui**
