@@ -16,7 +16,7 @@ Objetivo desse documento é ter uma visão simplificada do que foi solicitado e 
 
 Por padrão de configuração da *Serverrest* a duração da autorização é de 10 minutos, então quando o token de acesso expirar, sua aplicação deverá gerar um novo Token de autorização
 
-*Ponto de atenção:* Para obter  ganho de tempo e assim obter mais produtividade na execução dos seus testes é recomedado que token esteja previamente automatizado via script ou variável para facilitar utilização do mesmo em todas as APIs que possui o mesmo como *Pré-Condição* :
+**Ponto de atenção:** Para obter  ganho de tempo e assim obter mais produtividade na execução dos seus testes é recomedado que token esteja previamente automatizado via script ou variável para facilitar utilização do mesmo em todas as APIs que possui o mesmo como *Pré-Condição* :
 
 **APIs que tem como  *Pré- Condição* a geração do Tokem:**
 
