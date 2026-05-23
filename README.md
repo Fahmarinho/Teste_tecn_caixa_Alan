@@ -1,10 +1,10 @@
 # SPREAD: Desafio Técnico de Testes de Software
 
 O ServeRest é uma API REST gratuita que simula uma loja virtual que aborta os seguintes fluxos. 
-- Usuários: `<Criação/ Listar/ Atualização / Exclusão>`
-- Usuários: `<Criação Login >`
-- Produtos :`<Criação/ Listar/ Atualização / Exclusão>`
-- Carrinho :`<Criação/ Listar/Exclusão/ Cancelar compra>`
+- Usuários: `<Criação/ Listar/ Atualização / Exclusão>`                       💻 *Pré-requisitos : N/A*
+- Usuários: `<Criação Login >`                                                💻 *Pré-requisitos : Ter usuário*
+- Produtos :`<Criação/ Listar/ Atualização / Exclusão>` 💻 *Pré-requisitos : Ter usuário,Login e Token ativo*
+- Carrinho :`<Criação/ Listar/Exclusão/ Cancelar compra>` 💻 *Pré-requisitos : Ter usuário,Login, Produtos cadastrados e Token ativo*
 
 
 Toda API que estiver com um ĩcone de um cadeado requer authentificação via Token, nesse teste técnico é o utilizado o *Bearer token*, por padrão de configuração da *Serverrest* a duração da autorização é de 10 minutos, então quando o token de acesso expirar, sua aplicação deverá gerar um novo Token de autorização
