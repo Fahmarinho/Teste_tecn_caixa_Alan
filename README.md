@@ -59,8 +59,9 @@ Cobertura de testes da API de Produtos:
 
 Cobertura de testes da API de Carrinho:
 1. Positivo (200) : *Criar Carrinho*
-2. Negatio (400 ) : Adicionar Produto acima do estoque permitido
-3. Fluxo FA () : * Cadastrar Produto inexistente no estoque*
+2. Negativo (400 ) : Adicionar Produto acima do estoque permitido
+3. Negativo (400) :Tentar cadastrar mais de um carrinho para um único  usuário
+4. Fluxo FA () : * Cadastrar Produto inexistente no estoque*
     
 ## 💻 Pré-requisitos
 
