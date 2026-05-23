@@ -38,7 +38,8 @@ Ponto de atenção: Para obter  ganho de tempo e assim obter mais produtividade 
 Estruturação/escrita de pelo ao menos 3 casos de teste contemplando cenários: positivos (fluxo básico e alternativos) e
 cenários negativos (fluxos de exceção):
 
-**LISTA DE CENÁRIOS DE TESTES**
+**LISTA DE CENÁRIOS DE TESTES QUE ESTÃO NO DOCUMENTO CB_FLUXO_GERAL_TESTES_APIs_USUÁRIO_LOGIN_PROD_CARRINHO**
+**Ao abrir esse documento pelo GIT e para visualizar por inteiro, no final da página deve-se clicar em 'More pages'**
 
 **CB -Cobertura de testes da API de Usuário:**
 
