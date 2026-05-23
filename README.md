@@ -3,12 +3,12 @@
 Objetivo desse documento é ter uma visão simplificada do que foi elaborado no desafio técnico splicitado pela Spread cliente que envolve o 
 ServeRest é uma API REST gratuita que simula uma loja virtual que aborda os seguintes fluxos:
 
-- Usuários: `<Criação/ Listar/ Atualização / Exclusão>` 💻 *Pré-requisitos : N/A*
-- Usuários: `<Criação Login >`  💻 *Pré-requisitos : Ter usuário*
-- Produtos :`<Criação/ Listar/ Atualização / Exclusão>` 💻 *Pré-requisitos : Ter usuário,Login e Token ativo
+- Usuários: `<Criação/ Listar/ Atualização / Exclusão>` 💻 *Pré-condição : N/A*
+- Usuários: `<Criação Login >`  💻 *Pré-condição : Ter usuário*
+- Produtos :`<Criação/ Listar/ Atualização / Exclusão>` 💻 *Pré-condição : Ter usuário,Login e Token ativo
 
-   **💻 *Pós condição:	`#RRGGBB`** através da API listar produtos Validar processos adição de um novo produtos, estorno de produtos ou diminuição da quantidade da sua quantidade no estoque
-- Carrinho :`<Criação/ Listar/Exclusão/ Cancelar compra>` 💻 *Pré-requisitos : Ter usuário,Login, Produtos cadastrados e Token ativo*
+   **💻 *Pós condição:** através da API listar produtos Validar processos adição de um novo produtos, estorno de produtos ou diminuição da quantidade da sua quantidade no estoque
+- Carrinho :`<Criação/ Listar/Exclusão/ Cancelar compra>` 💻 *Pré-Condição: Ter usuário,Login, Produtos cadastrados e Token ativo*
     *💻 *Pós condição:* através da API listar produtos Validar processos estorno de produtos ou diminuição da quantidade da sua quantidade no estoque
 
 ### Toda API que estiver com ícone de um cadeado requer autenticação via Token, nesse testes da Spread o utilizado é o *Bearer token*, durante os processos de envio de Requisições que requer autorização irá apresentar a seguinte mensagem:
