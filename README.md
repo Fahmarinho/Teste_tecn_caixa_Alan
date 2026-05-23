@@ -26,6 +26,7 @@ Ponto de atenção: Para obter  ganho de tempo e assim obter mais produtividade 
 
 - [1] Executar a API de *Criação de usuário*
 - [2] Executar a API de *Realizar Login*
+- [3] Realizar a atualização do token gerado via Variável ou Script 
 
 
 <img src="imagem.png" alt="Exemplo imagem">
