@@ -1,0 +1,1268 @@
+{
+	"info": {
+		"_postman_id": "1cced43c-a311-423f-a081-3263902fa2ef",
+		"name": "TESTES CAIXA_GRUD_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17954566"
+	},
+	"item": [
+		{
+			"name": "1-  API_USUÁRIOS - CEN - POSITIVOS",
+			"item": [
+				{
+					"name": "C- Criar Usuário(201)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Fatima caixa \",\n  \"email\": \"fatimacaixa04@qa.com\",\n  \"password\": \"caixa04\",\n  \"administrador\": \"true\"\n}\n\n"
+						},
+						"url": {
+							"raw": "https://serverest.dev/usuarios",
+							"protocol": "https",
+							"host": [
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "R- Buscar Usuário por ID (200)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://serverest.dev/usuarios/0uxuPY0cbmQhpEz1",
+							"protocol": "https",
+							"host": [
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"usuarios",
+								"0uxuPY0cbmQhpEz1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "U - Alterar dados usuários (200)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Fatima alteracao\",\n  \"email\": \"tecnico@qa.com.br\",\n  \"password\": \"teste3\",\n  \"administrador\": \"true\"\n}"
+						},
+						"url": {
+							"raw": "https://serverest.dev/usuarios/0uxuPY0cbmQhpEz1",
+							"protocol": "https",
+							"host": [
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"usuarios",
+								"0uxuPY0cbmQhpEz1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "D- Deletar usuário por ID (200)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://serverest.dev/usuarios/6wpDkfOlkajryRX3",
+							"protocol": "https",
+							"host": [
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"usuarios",
+								"6wpDkfOlkajryRX3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2- API Autenticação",
+			"item": [
+				{
+					"name": "C- Realizar Login (200)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n {\n \"email\": \"fatimacaixa04@qa.com\",\n  \"password\": \"caixa04\"\n}\n\n"
+						},
+						"url": {
+							"raw": "https://serverest.dev/login",
+							"protocol": "https",
+							"host": [
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3- API ŔRODUTOS - CEN_POSITIVOS",
+			"item": [
+				{
+					"name": "C - Cadastro de Produtos (200)",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const postRequest = {",
+									"    url: pm.environment.get(\"BaseUrl\") + \"/login\",",
+									"    method: \"POST\",",
+									"    body: { ",
+									"        mode: \"raw\",",
+									"        options: {  ",
+									"            raw: {",
+									"                language: \"JSON\"",
+									"              }",
+									"              },",
+									"        raw: JSON.stringify({",
+									"             email: \"fatimacaixa02@qa.com\",",
+									"            password: \"caixa02\"",
+									"             })",
+									"",
+									"        }",
+									"    }",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonResponse = JSON.parse(resposeBody);",
+									"postman.setEvironmentVariable(\"auth_token\",jsonResponse.authorization);)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "{{auth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"CAIXA TEM005\",\n  \"preco\": 470,\n  \"descricao\": \"KIT BONECOS DA CAIXA TEM 05\",\n  \"quantidade\": 381\n}"
+						},
+						"url": {
+							"raw": "https://serverest.dev/produtos",
+							"protocol": "https",
+							"host": [
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "R- Buscar Produto (200)",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://serverest.dev/produtos/{{id_produto}}",
+							"protocol": "https",
+							"host": [
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos",
+								"{{id_produto}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "U - Atualizar Produto (200)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Logitech MX Verticala\",\n  \"preco\": 470,\n  \"descricao\": \"Mouse\",\n  \"quantidade\": 381\n}"
+						},
+						"url": {
+							"raw": "https://serverest.dev/produtos/{{id_produto}}",
+							"protocol": "https",
+							"host": [
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos",
+								"{{id_produto}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "D - Deletar produtos (200)",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "https://serverest.dev/produtos/K6leHdftCeOJj8BJ",
+							"protocol": "https",
+							"host": [
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos",
+								"K6leHdftCeOJj8BJ"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4- API CARRINHO - CEN -POSITIVOS",
+			"item": [
+				{
+					"name": "Realizar compras",
+					"item": [
+						{
+							"name": "1- Autenticação",
+							"item": [
+								{
+									"name": "C- Realizar Login (200)",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "\n {\n \"email\": \"fatimacaixa04@qa.com\",\n  \"password\": \"caixa04\"\n}\n\n"
+										},
+										"url": {
+											"raw": "https://serverest.dev/login",
+											"protocol": "https",
+											"host": [
+												"serverest",
+												"dev"
+											],
+											"path": [
+												"login"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "2- Criação de Produtos",
+							"item": [
+								{
+									"name": "C - Criação de Produto 01 (200)",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const postRequest = {",
+													"    url: pm.environment.get(\"BaseUrl\") + \"/login\",",
+													"    method: \"POST\",",
+													"    body: { ",
+													"        mode: \"raw\",",
+													"        options: {  ",
+													"            raw: {",
+													"                language: \"JSON\"",
+													"              }",
+													"              },",
+													"        raw: JSON.stringify({",
+													"             email: \"fatimacaixa02@qa.com\",",
+													"            password: \"caixa02\"",
+													"             })",
+													"",
+													"        }",
+													"    }",
+													"",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonResponse = JSON.parse(resposeBody);",
+													"postman.setEvironmentVariable(\"auth_token\",jsonResponse.authorization);)"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{auth_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											},
+											{
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"key": "Authorization",
+												"value": "{{auth_token}}"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"nome\": \"CAIXA TEM 11 \",\n  \"preco\": 500,\n  \"descricao\": \"KIT BONECOS DA CAIXA 11\",\n  \"quantidade\": 381\n}"
+										},
+										"url": {
+											"raw": "https://serverest.dev/produtos",
+											"protocol": "https",
+											"host": [
+												"serverest",
+												"dev"
+											],
+											"path": [
+												"produtos"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "C - Criação de Produto 02 (200)",
+									"event": [
+										{
+											"listen": "prerequest",
+											"script": {
+												"exec": [
+													"const postRequest = {",
+													"    url: pm.environment.get(\"BaseUrl\") + \"/login\",",
+													"    method: \"POST\",",
+													"    body: { ",
+													"        mode: \"raw\",",
+													"        options: {  ",
+													"            raw: {",
+													"                language: \"JSON\"",
+													"              }",
+													"              },",
+													"        raw: JSON.stringify({",
+													"             email: \"fatimacaixa02@qa.com\",",
+													"            password: \"caixa02\"",
+													"             })",
+													"",
+													"        }",
+													"    }",
+													"",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										},
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"var jsonResponse = JSON.parse(resposeBody);",
+													"postman.setEvironmentVariable(\"auth_token\",jsonResponse.authorization);)"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{auth_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											},
+											{
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"key": "Authorization",
+												"value": "{{auth_token}}"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"nome\": \"CAIXA TEM 20 \",\n  \"preco\": 500,\n  \"descricao\": \"KIT BONECOS DA CAIXA 20\",\n  \"quantidade\": 381\n}"
+										},
+										"url": {
+											"raw": "https://serverest.dev/produtos",
+											"protocol": "https",
+											"host": [
+												"serverest",
+												"dev"
+											],
+											"path": [
+												"produtos"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "3- Realização da Compra",
+							"item": [
+								{
+									"name": "C- Cadastro de Produtos no Carrinho (201)",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{auth_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"produtos\": [\n    {\n      \"idProduto\": \"fkkcuBUC5vx7HFTr\",\n      \"quantidade\": 1\n    },\n    {\n      \"idProduto\": \"GBHDH4vBWLtqLiXY\",\n      \"quantidade\": 3\n    }\n  ]\n}"
+										},
+										"url": {
+											"raw": "https://serverest.dev/carrinhos",
+											"protocol": "https",
+											"host": [
+												"serverest",
+												"dev"
+											],
+											"path": [
+												"carrinhos"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "R - Buscar carrinho por ID",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "https://serverest.dev/carrinhos/{{Id_carrinho}}",
+											"protocol": "https",
+											"host": [
+												"serverest",
+												"dev"
+											],
+											"path": [
+												"carrinhos",
+												"{{Id_carrinho}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "D - Deletar carrinho de compras",
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{auth_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "https://serverest.dev/carrinhos/concluir-compra",
+											"protocol": "https",
+											"host": [
+												"serverest",
+												"dev"
+											],
+											"path": [
+												"carrinhos",
+												"concluir-compra"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "D- Cancelar-compra",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "https://serverest.dev/carrinhos/cancelar-compra",
+											"protocol": "https",
+											"host": [
+												"serverest",
+												"dev"
+											],
+											"path": [
+												"carrinhos",
+												"cancelar-compra"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Cancelar Compra",
+							"item": []
+						}
+					]
+				},
+				{
+					"name": "USUÁRIOS - TESTES_NEG",
+					"item": [
+						{
+							"name": "U - Alterar dados usuários (erro 400)",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"Fatima alteracao\",\n    \"email\": \"tecnico@qa.com.br\",\n    // \"password\": \"teste3\",\n    \"administrador\": \"true\"\n}"
+								},
+								"url": {
+									"raw": "https://serverest.dev/usuarios/0uxuPY0cbmQhpEz1",
+									"protocol": "https",
+									"host": [
+										"serverest",
+										"dev"
+									],
+									"path": [
+										"usuarios",
+										"0uxuPY0cbmQhpEz1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "R - Buscar Usuários (erro 400)",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "C- Cadastrar usuário sem e-mail (400)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"Fatima caixa \",\n  // \"email\": \"fatimacaixa02@qa.com\",\n  \"password\": \"caixa02\",\n  \"administrador\": \"true\"\n}\n\n\n\n\n"
+								},
+								"url": {
+									"raw": "https://serverest.dev/usuarios",
+									"protocol": "https",
+									"host": [
+										"serverest",
+										"dev"
+									],
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "PRODUTO - TESTES_NEG",
+			"item": [
+				{
+					"name": "Produto - Testes_Neg",
+					"item": []
+				},
+				{
+					"name": "C - Cadastro de Produtos_nome duplicado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZhdGltYWNhaXhhQHFhLmNvbSIsInBhc3N3b3JkIjoiY2FpeGEwMSIsImlhdCI6MTc3OTQ2NDY1NSwiZXhwIjoxNzc5NDY1MjU1fQ.3-kHQT714RoAQgR8tPSH4vwOZCSnyppq7XEIgvVDZT0"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Logitech MX VerticalCAIXA\",\n  \"preco\": 470,\n  \"descricao\": \"Mouse\",\n  \"quantidade\": 381\n}"
+						},
+						"url": {
+							"raw": "https://serverest.dev/produtos",
+							"protocol": "https",
+							"host": [
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "C - Cadastro de Produtos sem  Preço",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"const postRequest = {",
+									"    url: pm.environment.get(\"BaseUrl\") + \"/login\",",
+									"    method: \"POST\",",
+									"    body: { ",
+									"        mode: \"raw\",",
+									"        options: {  ",
+									"            raw: {",
+									"                language: \"JSON\"",
+									"              }",
+									"              },",
+									"        raw: JSON.stringify({",
+									"             email: \"fatimacaixa02@qa.com\",",
+									"            password: \"caixa02\"",
+									"             })",
+									"",
+									"        }",
+									"    }",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonResponse = JSON.parse(resposeBody);",
+									"postman.setEvironmentVariable(\"auth_token\",jsonResponse.authorization);)"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "{{auth_token}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"CAIXA TEM02\",\n//  \"preco\": 470,\n  \"descricao\": \"KIT BONECOS DA CAIXA\",\n  \"quantidade\": 381\n}"
+						},
+						"url": {
+							"raw": "https://serverest.dev/produtos",
+							"protocol": "https",
+							"host": [
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "U - Atualizar Produto com mesmo nome",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{auth_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Logitech MX Verticala\",\n  \"preco\": 470,\n  \"descricao\": \"Mouse\",\n  \"quantidade\": 381\n}"
+						},
+						"url": {
+							"raw": "https://serverest.dev/produtos/{{id_produto}}",
+							"protocol": "https",
+							"host": [
+								"serverest",
+								"dev"
+							],
+							"path": [
+								"produtos",
+								"{{id_produto}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CARRINHO - TESTES_NEG",
+			"item": []
+		},
+		{
+			"name": "USUÁRIOS - TESTES_FA",
+			"item": []
+		},
+		{
+			"name": "PRODUTOS - TESTES_FA",
+			"item": []
+		},
+		{
+			"name": "CARRINHO - TESTES_FA",
+			"item": []
+		},
+		{
+			"name": "LISTAR",
+			"item": [
+				{
+					"name": "Listar usuários cadastrados",
+					"item": [
+						{
+							"name": "Listar Usuários (200)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://serverest.dev/usuarios",
+									"protocol": "https",
+									"host": [
+										"serverest",
+										"dev"
+									],
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Listar Produtos cadastrados",
+					"item": [
+						{
+							"name": "Listar Produtos (200)",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://serverest.dev/produtos?preco=470&quantidade=0",
+									"protocol": "https",
+									"host": [
+										"serverest",
+										"dev"
+									],
+									"path": [
+										"produtos"
+									],
+									"query": [
+										{
+											"key": "preco",
+											"value": "470"
+										},
+										{
+											"key": "quantidade",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Listar Carrinho cadastrados",
+					"item": [
+						{
+							"name": "Listar carrinhos",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "https://serverest.dev/carrinhos?precoTotal=1300&quantidadeTotal=2",
+									"protocol": "https",
+									"host": [
+										"serverest",
+										"dev"
+									],
+									"path": [
+										"carrinhos"
+									],
+									"query": [
+										{
+											"key": "precoTotal",
+											"value": "1300"
+										},
+										{
+											"key": "quantidadeTotal",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "https://serverest.dev/carrinhos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"produtos\": [\n    {\n      \"idProduto\": \"BeeJh5lz3k6kSIzA\",\n      \"quantidade\": 1\n    },\n    {\n      \"idProduto\": \"YaeJ455lz3k6kSIzA\",\n      \"quantidade\": 3\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "https://serverest.dev/carrinhos",
+					"protocol": "https",
+					"host": [
+						"serverest",
+						"dev"
+					],
+					"path": [
+						"carrinhos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "D- Deletar Produto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://serverest.dev/produtos/K6leHdftCeOJj8BJ",
+					"protocol": "https",
+					"host": [
+						"serverest",
+						"dev"
+					],
+					"path": [
+						"produtos",
+						"K6leHdftCeOJj8BJ"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "R- Buscar Produto",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://serverest.dev/produtos/{{id_produto}}",
+					"protocol": "https",
+					"host": [
+						"serverest",
+						"dev"
+					],
+					"path": [
+						"produtos",
+						"{{id_produto}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "C- Login com dados inválidos (401)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"fulano@qa.com\",\n  \"password\": \"CAIXA\"\n}"
+				},
+				"url": {
+					"raw": "https://serverest.dev/login",
+					"protocol": "https",
+					"host": [
+						"serverest",
+						"dev"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "D- Deletar Produto existente no carrinho",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{auth_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://serverest.dev/produtos/K6leHdftCeOJj8BJ",
+					"protocol": "https",
+					"host": [
+						"serverest",
+						"dev"
+					],
+					"path": [
+						"produtos",
+						"K6leHdftCeOJj8BJ"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
