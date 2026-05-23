@@ -68,5 +68,3 @@ cenários negativos (fluxos de exceção):
 
 
 
-
-Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
