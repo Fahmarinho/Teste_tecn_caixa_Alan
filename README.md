@@ -35,7 +35,7 @@ Ponto de atenção: Para obter  ganho de tempo e assim obter mais produtividade 
 
 ### ATIVIDADES
 
-Estruturação/escrita de ao menos 3 casos de teste contemplando cenários: positivos (fluxo básico e alternativos) e
+Estruturação/escrita de pelo ao menos 3 casos de teste contemplando cenários: positivos (fluxo básico e alternativos) e
 cenários negativos (fluxos de exceção):
 
 
