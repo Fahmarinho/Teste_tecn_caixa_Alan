@@ -19,20 +19,10 @@ Toda API que estiver com um ĩcone de um cadeado requer authentificação via To
 
 ### Como Gerar um novo Token
 
-Ponto de atenção: token deve está automatizado via script ou variável para facilitar utilização do mesmo em todas as APIs que possui o mesmo como Pré-Condição :
+Ponto de atenção: Para ganho de tempo e assim obter mais produtividade na execução dos seus testes é recomedado que token esteja previamente automatizado via script ou variável para facilitar utilização do mesmo em todas as APIs que possui o mesmo como *Pré-Condição* :
 
 - [1] Executar a API de *Criação de usuário*
 - [2] Executar a API de *Realizar Login*
-- [x] Tarefa 3
-- [ ] Tarefa 4
-- [ ] Tarefa 5
-
-
-![GitHub ](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
-![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
-![GitHub forks](https://img.shields.io/github/forks/iuricode/README-template?style=for-the-badge)
-![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
-![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
 
 
 <img src="imagem.png" alt="Exemplo imagem">
