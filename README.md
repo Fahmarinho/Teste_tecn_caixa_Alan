@@ -1,4 +1,4 @@
-# SPREAD: Desafio Técnico de Testes de Software
+## 🚀  SPREAD: Desafio Técnico de Testes de Software
 
 Objetivo desse documento é ter uma visão simplificada do que foi elaborado no desafio técnico splicitado pela Spread cliente que envolve o 
 ServeRest é uma API REST gratuita que simula uma loja virtual que aborda os seguintes fluxos:
@@ -46,22 +46,22 @@ Cobertura de testes da API de Usuário:
 
 Cobertura de testes da API de Login:
 
-1. Positivo (200): *Efetuar Login*
-2. Negativo (401) : * Efetuar Login com senha inválida
-
-
+1. Positivo (200): *Realizar Login com credenciais válidas   (Status code 200)*
+2. Negativo (401) : * Realizar Login com senha incorreta   (Status code 401)*
+   
 Cobertura de testes da API de Produtos:
    
-1.Nagativo (401) *criar Produto sem token*
-2.Positivo (200): *Criar de Produto*
-3.Fluxo fA (400 ) : * Cadastrar Produto com Nome existente*
+1.Nagativo (401) *Tentar cadastrar produto sem token (Status code 401 )*
+2.Positivo (201): *Cadastro de produto com sucesso*
+3.Fluxo FA (400 ): * Cadastrar produto com nome já existente*
 
 
 Cobertura de testes da API de Carrinho:
-1. Positivo (200) : *Criar Carrinho*
-2. Negativo (400 ) : Adicionar Produto acima do estoque permitido
-3. Negativo (400) :Tentar cadastrar mais de um carrinho para um único  usuário
-4. Fluxo FA () : * Cadastrar Produto inexistente no estoque*
+
+1. Positivo (201) : *Criar um carrinho contendo produtos válidos*
+2. Negativo (400 ) : *Adicionar quantidade de produto acima do estoque disponível*
+3. Negativo (400) :Tentar cadastrar mais de um carrinho para um único  usuário*
+4. Fluxo FA (200) : Cancelar compra devolvendo produtos ao estoque 
     
 ## 💻 Pré-requisitos
 
