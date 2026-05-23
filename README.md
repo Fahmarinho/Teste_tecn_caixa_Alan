@@ -1,14 +1,37 @@
-# Nome do projeto
+# SPREAD: Desafio Técnico de Testes de Software
 
-![GitHub repo size](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
+O ServeRest é uma API REST gratuita que simula uma loja virtual com intuito de servir de material de estudos de testes de API. 
+Toda API que estiver com um ĩcone de um cadeado requer authentificação via Token, o utilizado nesse teste é o *Bearer token*, por padrão a duração da autorização é 10 minutos, então quando o token de acesso expirar, sua aplicação deverá gerar um novo Token de autorização
+
+
+### Exemplo de APIs que possuem ícone de cadeado e que tem como *Pré- Condição* a utilizaçao do Tokem:
+- API de Usuários: `<Cadastro/ Atualização / Exclusão>`
+- API de Produtos :`<Cadastro/ Atualização / Exclusão>`
+- API de Carrinho :`<Cadastro/ Atualização / Exclusão>`
+
+
+
+### Como Gerar um novo Token
+
+Ponto de atenção: token deve está automatizado via script ou variável para facilitar utilização do mesmo em todas as APIs que possui o mesmo como Pré-Condição :
+
+- [1] Executar a API de *Criação de usuário*
+- [2] Executar a API de *Realizar Login*
+- [x] Tarefa 3
+- [ ] Tarefa 4
+- [ ] Tarefa 5
+
+
+![GitHub ](https://img.shields.io/github/repo-size/iuricode/README-template?style=for-the-badge)
 ![GitHub language count](https://img.shields.io/github/languages/count/iuricode/README-template?style=for-the-badge)
 ![GitHub forks](https://img.shields.io/github/forks/iuricode/README-template?style=for-the-badge)
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/iuricode/README-template?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/iuricode/README-template?style=for-the-badge)
 
+
 <img src="imagem.png" alt="Exemplo imagem">
 
-> Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+> testes Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
 
 ### Ajustes e melhorias
 
