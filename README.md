@@ -62,24 +62,6 @@ Cobertura de testes da API de Carrinho:
 2. Negatio (400 ) : Adicionar Produto acima do estoque permitido
 3. Fluxo FA () : * Cadastrar Produto inexistente no estoque*
     
-
-- [x] Cenários Positivos
-Por padrão de configuração da *Serverrest* a duração da autorização é de 10 minutos, então quando o token de acesso expirar, sua aplicação deverá gerar um novo Token de autorização
-- [ ] 
-      -Fluxo básico
-- [x] Tarefa 2
-- [x] Tarefa 3
-- [ ] Tarefa 4
-- [ ] Tarefa 5
-
-features/
- ├── carrinhos/
- │    ├── criar_carrinho.feature
- │    ├── listar_carrinhos.feature
- │    ├── buscar_carrinho.feature
- │    ├── concluir_compra.feature
- │    └── cancelar_compra.feature
-
 ## 💻 Pré-requisitos
 
 Antes de começar, verifique se você atendeu aos seguintes requisitos:
