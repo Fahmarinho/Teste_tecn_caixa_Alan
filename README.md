@@ -38,6 +38,7 @@ Ponto de atenção: Para obter  ganho de tempo e assim obter mais produtividade 
 Estruturação/escrita de pelo ao menos 3 casos de teste contemplando cenários: positivos (fluxo básico e alternativos) e
 cenários negativos (fluxos de exceção):
 
+**LISTA DE CENÁRIOS DE TESTES**
 
 **CB -Cobertura de testes da API de Usuário:**
 
@@ -51,9 +52,9 @@ cenários negativos (fluxos de exceção):
    
 **CB - Cobertura de testes da API de Produtos:**
    
-1.Nagativo (401) *Tentar cadastrar produto sem token (Status code 401 )*
+1.Negativo (401) *Tentar cadastrar produto sem token (Status code 401 )*
 2.Positivo (201): *Cadastro de produto com sucesso*
-3.Fluxo FA (400 ): * Cadastrar produto com nome já existente*
+3.Fluxo alternativo (400 ): * Cadastrar produto com nome já existente*
 
 **CB -Cobertura de testes da API de Carrinho:**
 
@@ -61,14 +62,7 @@ cenários negativos (fluxos de exceção):
 2. Negativo (400 ) : *Adicionar quantidade de produto acima do estoque disponível*
 3. Negativo (400) :Tentar cadastrar mais de um carrinho para um único  usuário*
 4. Fluxo FA (200) : Cancelar compra devolvendo produtos ao estoque 
-    
-## 💻 Pré-requisitos
-
-Antes de começar, verifique se você atendeu aos seguintes requisitos:
-
-- Você instalou a versão mais recente de `<linguagem / dependência / requeridos>`
-- Você tem uma máquina `<Windows / Linux / Mac>`. Indique qual sistema operacional é compatível / não compatível.
-- Você leu `<guia / link / documentação_relacionada_ao_projeto>`.
+   
 
 🚀 🤝  😄 **Muito agradecida por Lê até aqui**
 
