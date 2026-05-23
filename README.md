@@ -49,16 +49,18 @@ Cobertura de testes da API de Login:
 1. Positivo (200): *Efetuar Login*
 2. Negativo ( ) : * Efetuar Login com senha inválida
 
-Cobertura de testes da API de Produtos:
-   
-1. Positivo (200): *Criar de Produto*
-2. Negativo (): *Buscar Produto*
-3. Fluxo FA: *Alterar Produto DE PRODUTO*
 
 Cobertura de testes da API de Produtos:
+   
+1.Nagativo (401) *criar Produto sem token*
+2.Positivo (200): *Criar de Produto*
+3.Fluxo fA (400 ) : * Cadastrar Produto com Nome existente*
+
+
+Cobertura de testes da API de Carrinho:
 1. Positivo (200) : *Criar Carrinho*
-2. Negatio ( )
-3. Fluxo FA ()
+2. Negatio (400 ) : Adicionar Produto acima do estoque permitido
+3. Fluxo FA () : * Cadastrar Produto inexistente no estoque*
     
 
 - [x] Cenários Positivos
