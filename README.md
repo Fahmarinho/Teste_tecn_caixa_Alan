@@ -1,6 +1,8 @@
 # SPREAD: Desafio Técnico de Testes de Software
 
-O ServeRest é uma API REST gratuita que simula uma loja virtual que aborda os seguintes fluxos. 
+Objetivo desse documento é ter uma visão simplificada do que foi elaborado no desafio técnico splicitado pela Spread cliente que envolve o 
+ServeRest é uma API REST gratuita que simula uma loja virtual que aborda os seguintes fluxos:
+
 - Usuários: `<Criação/ Listar/ Atualização / Exclusão>` 💻 *Pré-requisitos : N/A*
 - Usuários: `<Criação Login >`  💻 *Pré-requisitos : Ter usuário*
 - Produtos :`<Criação/ Listar/ Atualização / Exclusão>` 💻 *Pré-requisitos : Ter usuário,Login e Token ativo*
@@ -26,24 +28,55 @@ Por padrão de configuração da *Serverrest* a duração da autorização é de
 
 Ponto de atenção: Para obter  ganho de tempo e assim obter mais produtividade na execução dos seus testes é recomedado que token esteja previamente automatizado no script ou variável para facilitar utilização do mesmo em todas as APIs que possui o mesmo como *Pré-Condição* :
 
-- [1] Executar a API de *Criação de usuário*
-- [2] Executar a API de *Realizar Login*
-- [3] Realizar a atualização do token gerado na própria Variável (global ou ambiente)  via ou Script ṕara funcionamento geral das requisições que necessitam do mesmo
+1. Executar a API de *Criação de usuário*
+2. Executar a API de *Realizar Login*
+3. Realizar a atualização do token gerado na própria Variável (global ou ambiente)  via ou Script ṕara funcionamento geral das requisições que necessitam do mesmo
 
 
-<img src="imagem.png" alt="Exemplo imagem">
+### ATIVIDADES
 
-> testes Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
+Estruturação/escrita de ao menos 3 casos de teste contemplando cenários: positivos (fluxo básico e alternativos) e
+cenários negativos (fluxos de exceção):
 
-### Ajustes e melhorias
 
-O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas para as seguintes tarefas:
+Cobertura de testes da API de Usuário:
 
-- [x] Tarefa 1
+1. Positivo (200): *Criar usuário*
+2. 
+
+Cobertura de testes da API de Login:
+
+1. Positivo (200): *Efetuar Login*
+2. Negativo ( ) : * Efetuar Login com senha inválida
+
+Cobertura de testes da API de Produtos:
+   
+1. Positivo (200): *Criar de Produto*
+2. Negativo (): *Buscar Produto*
+3. Fluxo FA: *Alterar Produto DE PRODUTO*
+
+Cobertura de testes da API de Produtos:
+1. Positivo (200) : *Criar Carrinho*
+2. Negatio ( )
+3. Fluxo FA ()
+    
+
+- [x] Cenários Positivos
+Por padrão de configuração da *Serverrest* a duração da autorização é de 10 minutos, então quando o token de acesso expirar, sua aplicação deverá gerar um novo Token de autorização
+- [ ] 
+      -Fluxo básico
 - [x] Tarefa 2
 - [x] Tarefa 3
 - [ ] Tarefa 4
 - [ ] Tarefa 5
+
+features/
+ ├── carrinhos/
+ │    ├── criar_carrinho.feature
+ │    ├── listar_carrinhos.feature
+ │    ├── buscar_carrinho.feature
+ │    ├── concluir_compra.feature
+ │    └── cancelar_compra.feature
 
 ## 💻 Pré-requisitos
 
@@ -76,6 +109,9 @@ Para usar <nome_do_projeto>, siga estas etapas:
 ```
 <exemplo_de_uso>
 ```
+<img src="imagem.png" alt="Exemplo imagem">
+
+> testes Linha adicional de texto informativo sobre o que o projeto faz. Sua introdução deve ter cerca de 2 ou 3 linhas. Não exagere, as pessoas não vão ler.
 
 Adicione comandos de execução e exemplos que você acha que os usuários acharão úteis. Forneça uma referência de opções para pontos de bônus!
 
