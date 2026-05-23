@@ -19,7 +19,7 @@ Toda API que estiver com um ĩcone de um cadeado requer authentificação via To
 
 ### Como Gerar um novo Token
 
-Ponto de atenção: Para ganho de tempo e assim obter mais produtividade na execução dos seus testes é recomedado que token esteja previamente automatizado via script ou variável para facilitar utilização do mesmo em todas as APIs que possui o mesmo como *Pré-Condição* :
+Ponto de atenção: Para obter  ganho de tempo e assim obter mais produtividade na execução dos seus testes é recomedado que token esteja previamente automatizado via script ou variável para facilitar utilização do mesmo em todas as APIs que possui o mesmo como *Pré-Condição* :
 
 - [1] Executar a API de *Criação de usuário*
 - [2] Executar a API de *Realizar Login*
