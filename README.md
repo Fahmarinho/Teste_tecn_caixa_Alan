@@ -24,11 +24,11 @@ Por padrão de configuração da *Serverrest* a duração da autorização é de
 
 ### Como Gerar um novo Token
 
-Ponto de atenção: Para obter  ganho de tempo e assim obter mais produtividade na execução dos seus testes é recomedado que token esteja previamente automatizado via script ou variável para facilitar utilização do mesmo em todas as APIs que possui o mesmo como *Pré-Condição* :
+Ponto de atenção: Para obter  ganho de tempo e assim obter mais produtividade na execução dos seus testes é recomedado que token esteja previamente automatizado no script ou variável para facilitar utilização do mesmo em todas as APIs que possui o mesmo como *Pré-Condição* :
 
 - [1] Executar a API de *Criação de usuário*
 - [2] Executar a API de *Realizar Login*
-- [3] Realizar a atualização do token gerado via Variável ou Script ṕara funcionamento das requisições que necessitam do mesmo
+- [3] Realizar a atualização do token gerado na própria Variável (global ou ambiente)  via ou Script ṕara funcionamento geral das requisições que necessitam do mesmo
 
 
 <img src="imagem.png" alt="Exemplo imagem">
