@@ -1,12 +1,14 @@
 # SPREAD: Desafio Técnico de Testes de Software
 
 O ServeRest é uma API REST gratuita que simula uma loja virtual que aborda os seguintes fluxos. 
-- Usuários: `<Criação/ Listar/ Atualização / Exclusão>`                       💻 *Pré-requisitos : N/A*
-- Usuários: `<Criação Login >`                                                💻 *Pré-requisitos : Ter usuário*
+- Usuários: `<Criação/ Listar/ Atualização / Exclusão>` 💻 *Pré-requisitos : N/A*
+- Usuários: `<Criação Login >`  💻 *Pré-requisitos : Ter usuário*
 - Produtos :`<Criação/ Listar/ Atualização / Exclusão>` 💻 *Pré-requisitos : Ter usuário,Login e Token ativo*
 - Carrinho :`<Criação/ Listar/Exclusão/ Cancelar compra>` 💻 *Pré-requisitos : Ter usuário,Login, Produtos cadastrados e Token ativo*
 
-### Toda API que estiver com ícone de um cadeado requer autenticação via Token, nesse testes da Spread o utilizado é o *Bearer token*:
+### Toda API que estiver com ícone de um cadeado requer autenticação via Token, nesse testes da Spread o utilizado é o *Bearer token*, durante os processos de envio de Requisições que requer autorização irá apresentar a seguinte mensagem:
+
+*"Token de acesso ausente, inválido, expirado ou usuário do token não existe mais"*
 
 Por padrão de configuração da *Serverrest* a duração da autorização é de 10 minutos, então quando o token de acesso expirar, sua aplicação deverá gerar um novo Token de autorização
 
@@ -26,7 +28,7 @@ Ponto de atenção: Para obter  ganho de tempo e assim obter mais produtividade 
 
 - [1] Executar a API de *Criação de usuário*
 - [2] Executar a API de *Realizar Login*
-- [3] Realizar a atualização do token gerado via Variável ou Script 
+- [3] Realizar a atualização do token gerado via Variável ou Script ṕara funcionamento das requisições que necessitam do mesmo
 
 
 <img src="imagem.png" alt="Exemplo imagem">
